@@ -41,7 +41,7 @@ function operate(operator, num1, num2){
     console.log('result: ', result)
 }
 
-const buttons = document.querySelector('.buttons')
-buttons.addEventListener('click', (event)=>{
-    // console.log(event.target)
+const calc_buttons = document.querySelector('.buttons');
+calc_buttons.addEventListener('click', (event)=>{
+    console.log(event.target)
 })
