@@ -41,7 +41,15 @@ function operate(operator, num1, num2){
     console.log('result: ', result)
 }
 
+const userinput = document.querySelector('.input')
+
+function display(event){
+    const className = event.target.getAttribute('class')
+    if(className === 'digit'){
+        num1=userinput.textContent+event.target.id
+        userinput.textContent = num1
+    }
+}
+
 const calc_buttons = document.querySelector('.buttons');
-calc_buttons.addEventListener('click', (event)=>{
-    console.log(event.target)
-})
+calc_buttons.addEventListener('click', display)
