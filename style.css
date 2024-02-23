@@ -31,13 +31,22 @@ body{
     flex: 1;
 }
 
-.row button{
-    flex: 1;
-}
 
 .operator{
     font-weight: bold;
     font-size: 20px;
     color: red;
     background-color: aquamarine;
+}
+
+.row button{
+    flex: 1;
+}
+
+.digit{
+    background-color: #fdd0d0;
+}
+
+.function{
+    background-color: rgb(248, 214, 164);
 }
