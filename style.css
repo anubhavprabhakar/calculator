@@ -1,0 +1,19 @@
+.calculator {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+}
+
+.row {
+    display: flex;
+    flex: 1;
+}
+
+.row button{
+    flex: 1;
+}
+
+input {
+    flex: 1;
+}
