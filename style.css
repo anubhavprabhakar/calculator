@@ -1,3 +1,8 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
 .calculator {
     display: flex;
     flex-direction: column;
