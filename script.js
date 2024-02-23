@@ -15,9 +15,10 @@ function divide(num1, num2){
     else return 'Cannot divide by zero.'
 }
 
-const num1 = null;
-const num2 = null;
-const operator = null;
+let num1 = null;
+let num2 = null;
+let operator = null;
+let result = null;
 
 function operate(operator, num1, num2){
     let result = null;
