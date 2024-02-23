@@ -10,6 +10,23 @@ body{
     width: 300px;
 }
 
+.buttons{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.row, .row div{
+    display: flex;
+    flex: 1;
+}
+
+.row div{
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
 .input{
     flex: 3;
 }
@@ -26,21 +43,16 @@ body{
     border: 1px solid black;
 }
 
-.row, .display {
+.display {
     display: flex;
     flex: 1;
 }
-
 
 .operator{
     font-weight: bold;
     font-size: 20px;
     color: red;
     background-color: aquamarine;
-}
-
-.row button{
-    flex: 1;
 }
 
 .digit{
