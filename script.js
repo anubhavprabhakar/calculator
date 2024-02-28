@@ -43,12 +43,36 @@ function operate(operator, num1, num2){
 
 const userinput = document.querySelector('.input')
 
+function validLengthString(string){
+    return (string.length <= 7)
+}
+
 function display(event){
     const className = event.target.getAttribute('class')
     if(className === 'digit'){
-        num1=userinput.textContent+event.target.id
-        userinput.textContent = num1
+        num1 = userinput.textContent + event.target.id
+        if(validLengthString(num1)){
+            userinput.textContent = num1
+        }
+        else{
+            userinput.textContent = 'ERR. Only 7 digits accepted'
+        }
     }
+    else if(className === 'function'){
+        const id = event.target.getAttribute('id')
+        if(id==='clear'){
+            if(validLengthString(userinput.textContent)){
+                userinput.textContent = pop(userinput.textContent)
+            }else{
+                userinput.textContent = ''
+            }
+        }
+    }
+}
+
+function pop(string){
+    let newString = string.slice(0, string.length-1)
+    return newString
 }
 
 const calc_buttons = document.querySelector('.buttons');
