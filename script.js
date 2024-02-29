@@ -21,7 +21,7 @@ function subtract(num1=0, num2=0){
 
 function multiply(num1=1, num2=1){
     if(!num1 || !num2) {
-        setDisplay('Cant multiply with null')
+        setDisplay('lol')
         return;
     }
     return parseInt(num1) * parseInt(num2)
@@ -62,18 +62,18 @@ function operate(operator, num1=0, num2=0){
 }
 
 function validLengthString(string){
-    return (string.length <= 7)
+    return (string.length <= 8) 
 }
 
 function display(event){
     const className = event.target.getAttribute('class')
     if(className === 'digit'){
-        num1 = userinput.textContent + event.target.id
-        if(num1===null||validLengthString(num1)){
-            setDisplay(num1)
+        num1 = userinput.textContent + event.target.textContent
+        if(num1===null||validLengthString(num1)||userinput.textContent==='error'){
+            setDisplay(parseFloat(num1))
         }
         else{
-            setDisplay('ERR. Only 7 digits accepted.')
+            setDisplay('error')
             num1 = null;
         }
     }

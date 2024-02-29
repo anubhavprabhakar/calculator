@@ -18,59 +18,59 @@ body{
     border: 5px solid black;
 }
 
-.row, .row button{
-    display: flex;
+.row, .row button, .last-row, .last-row button{
     flex: 1;
+    display: flex;
 }
 
 .row button{
     align-items: center;
     justify-content: center;
+}
+
+.row button, .last-row button{
+    font-size: 2em;
+    font-family: monospace;
     border: 2px solid black;
     border-radius: 5px;
 }
 
-.last-row, .last-row button{
-    flex: 1;
-    display: flex;
-}
-
 #zero{
     flex: 2;
-    border-radius: 5.5px;
 }
 
 #dot, #equals{
     flex: 1;
     padding: 2px;
-    border-radius: 5.5px;
 }
 
 .last-row button{
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
 }
 
 .input{
     flex: 3;
+    justify-content: flex-end;
 }
 
 .inputoperator{
     background-color:#e9e6e6;
     flex: 1;
+    justify-content: center;
 }
 
 .inputoperator, .input{
     display: flex;
     align-items: center;
-    justify-content: center;
+    font-size: 3em;
+    font-family: monospace;
 }
 
 .display {
     display: flex;
     flex: 1;
-    border: 1px solid black;
+    border: 12px solid black;
 }
 
 .operator{
