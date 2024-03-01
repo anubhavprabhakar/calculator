@@ -79,10 +79,16 @@ function display(event){
     }
     else if(className === 'function'){
         const id = event.target.getAttribute('id')
-        if(id==='clear'){
+        if(id==='allclear'){
             setDisplay('')
             num1 = null
             finalresult = null
+        }else if(id==='clear'){
+            if(num1==userinput.textContent || finalresult==userinput.textContent){
+                let toDisplay = popped(userinput.textContent)
+                setDisplay(toDisplay)
+                num1 = parseFloat(userinput.textContent)
+            }
         }else if(id==='equals'){
             if(num1===null||isNaN(num1)||!validLengthString(num1)) {
                 setDisplay(finalresult)
