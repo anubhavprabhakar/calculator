@@ -6,8 +6,8 @@ body{
 .calculator {
     display: flex;
     flex-direction: column;
-    height: 500px;
-    width: 350px;
+    height: 484px;
+    width: 334px;
     border-radius: 5px;
     border: 8px solid rgb(192, 67, 67);
 }
