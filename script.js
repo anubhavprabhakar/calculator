@@ -3,7 +3,15 @@ const operatorinput = document.querySelector('.inputoperator')
 const resultdisplay = document.querySelector('.result')
 
 function setDisplay(text){
-    userinput.textContent = text
+    console.log(text)
+    if(text==='.'){
+        userinput.textContent
+    }
+    if(text===''||text===null){
+        setDisplay('0')
+    }else{
+        userinput.textContent = parseFloat(text)
+    }
 }
 
 function add(num1, num2){
@@ -27,12 +35,11 @@ function divide(num1, num2){
     return parseFloat(num1) / parseFloat(num2)
 }
 
-let num1 = null;
-let num2 = null;
+let inputnum = null;
 let operator = null;
 let finalresult = null;
 
-function operate(operator, num1=0, num2=0){
+function operate(operator, num1, num2){
     let result = null;
     switch(operator){
         case 'add':
@@ -59,33 +66,33 @@ function validLengthString(string){
 
 function allClear(){
     setDisplay('')
-    num1 = null
+    inputnum = null
     finalresult = null
 }
 
 function clear(){
-    if(num1==userinput.textContent || finalresult==userinput.textContent){
+    if(inputnum==userinput.textContent || finalresult==userinput.textContent){
         let toDisplay = popped(userinput.textContent)
         setDisplay(toDisplay)
-        num1 = parseFloat(userinput.textContent)
+        inputnum = userinput.textContent
     }else{
         setDisplay('')
-        num1=null;
+        inputnum=null;
     }
 }
 
 function calculate(event){
     const className = event.target.getAttribute('class')
     if(className === 'digit'){
-        num1 = userinput.textContent + event.target.textContent
+        inputnum = userinput.textContent + event.target.textContent
         if(userinput.textContent==='error'){
-            num1 = event.target.textContent
-            setDisplay(parseFloat(num1))
-        }else if(validLengthString(num1)){
-            setDisplay(parseFloat(num1))
+            inputnum = event.target.textContent
+            setDisplay(inputnum)
+        }else if(validLengthString(inputnum)){
+            setDisplay(inputnum)
         }else{
             setDisplay('error')
-            num1 = null;
+            inputnum = null;
         }
     }
     else if(className === 'function'){
@@ -95,12 +102,12 @@ function calculate(event){
         }else if(id==='clear'){
             clear()
         }else if(id==='equals'){
-            if(num1===null||isNaN(num1)||!validLengthString(num1)) {
+            if(inputnum===null||isNaN(inputnum)||!validLengthString(inputnum)) {
                 setDisplay('error')
                 return;
             }
-            finalresult = operate(operator, finalresult, num1)
-            num1 = finalresult
+            finalresult = operate(operator, finalresult, inputnum)
+            inputnum = finalresult
             setDisplay(finalresult)
         }
     }else if(className === 'operator'){
@@ -114,5 +121,6 @@ function popped(string){
     return newString
 }
 
+setDisplay('0')
 const calc_buttons = document.querySelector('.buttons');
 calc_buttons.addEventListener('click', calculate)
