@@ -3,19 +3,18 @@ const operatorinput = document.querySelector('.inputoperator')
 const resultdisplay = document.querySelector('.result')
 
 function setDisplay(text){
-    console.log(text)
+    console.log('setDisplay(text):', text)
     if(text==='.'){
         userinput.textContent
     }
     if(text===''||text===null){
         setDisplay('0')
     }else{
-        userinput.textContent = parseFloat(text)
+        userinput.textContent = text
     }
 }
 
 function add(num1, num2){
-    console.log(num1, num2)
     return parseFloat(num1) + parseFloat(num2)
 }
 
@@ -41,6 +40,7 @@ let finalresult = null;
 
 function operate(operator, num1, num2){
     let result = null;
+    console.log('operate:',operator, num1, num2)
     switch(operator){
         case 'add':
             result = add(num1, num2);
@@ -106,11 +106,15 @@ function calculate(event){
                 setDisplay('error')
                 return;
             }
+            
             finalresult = operate(operator, finalresult, inputnum)
-            inputnum = finalresult
             setDisplay(finalresult)
         }
     }else if(className === 'operator'){
+        if(finalresult===null){
+            finalresult=inputnum
+            console.log('fin:null - ',finalresult, inputnum)
+        }
         operatorinput.textContent = event.target.textContent
         operator = event.target.id
     }
