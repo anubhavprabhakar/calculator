@@ -1,6 +1,9 @@
 body{
-    display: flex;
+    display: flex;  
+    align-items: center;
     justify-content: center;
+    min-height: 95vh;
+    height: 100vh;
 }
 
 .calculator {
