@@ -9,7 +9,7 @@ body{
     height: 484px;
     width: 334px;
     border-radius: 5px;
-    border: 8px solid rgb(192, 67, 67);
+    border: 8px solid #940f20;
 }
 
 .buttons{
@@ -82,6 +82,7 @@ body{
 }
 
 .digit{
+    color: white;
     background-color: #dd9393;
 }
 
@@ -91,5 +92,5 @@ body{
 
 #equals{
     color: rgb(255, 255, 255);
-    background-color: rgb(66, 68, 170)
+    background-color: rgb(47, 0, 255);
 }
