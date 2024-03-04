@@ -7,8 +7,8 @@ function setDisplay(text){
     if(text==='.'){
         userinput.textContent
     }
-    if(text===''||text===null){
-        setDisplay('0')
+    if(text==0||text===''||text===null){
+        userinput.textContent = '0'
     }else{
         userinput.textContent = text
     }
@@ -55,6 +55,7 @@ function operate(operator, num1, num2){
             result = divide(num1, num2)
             break;
         default:
+            result = parseFloat(num1);
             break;
     }
     return result
@@ -68,9 +69,14 @@ function allClear(){
     setDisplay('')
     inputnum = null
     finalresult = null
+    operator = null
 }
 
 function clear(){
+    if(userinput.textContent==='Infinity'){
+        setDisplay('')
+        finalresult=null
+    }
     if(inputnum==userinput.textContent || finalresult==userinput.textContent){
         let toDisplay = popped(userinput.textContent)
         setDisplay(toDisplay)
@@ -78,6 +84,9 @@ function clear(){
     }else{
         setDisplay('')
         inputnum=null;
+    }
+    if(finalresult==='error' || isNaN(finalresult)){
+        finalresult=null;
     }
 }
 
@@ -106,9 +115,19 @@ function calculate(event){
                 setDisplay('error')
                 return;
             }
-            
+            if(finalresult===null){
+                finalresult=inputnum
+                console.log('fin:null - ',finalresult, inputnum)
+            }
+
             finalresult = operate(operator, finalresult, inputnum)
+            
+            if(finalresult.toFixed(2)!=finalresult){
+                finalresult=finalresult.toFixed(2)
+            }
             setDisplay(finalresult)
+            inputnum=null
+            operator=null
         }
     }else if(className === 'operator'){
         if(finalresult===null){
@@ -117,6 +136,7 @@ function calculate(event){
         }
         operatorinput.textContent = event.target.textContent
         operator = event.target.id
+        setDisplay('0')
     }
 }
 
