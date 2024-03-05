@@ -84,16 +84,35 @@ body{
     background-color: #df97d9;
 }
 
+.operator:active{
+    color: red;
+    background-color: #fd62f0;
+}
+
 .digit{
     color: #940f20;
     background-color: #dd9393;
 }
 
+.digit:active {
+    color: #940f20;
+    background-color: #f57284;
+  }
+
 .function{
     background-color: rgb(248, 214, 164);
+}
+
+.function:active{
+    background-color: rgb(250, 192, 106);
 }
 
 #equals{
     color: rgb(255, 255, 255);
     background-color: rgb(47, 0, 255);
+}
+
+#equals:active{
+    color: rgb(255, 255, 255);
+    background-color: rgb(161, 141, 252);
 }
