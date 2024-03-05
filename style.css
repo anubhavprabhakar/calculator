@@ -54,20 +54,20 @@ body{
 }
 
 .input{
-    flex: 3;
+    flex: 3.5;
     justify-content: flex-end;
 }
 
 .inputoperator{
     background-color:#e9e6e6;
-    flex: 1;
+    flex: 0.5;
     justify-content: center;
 }
 
 .inputoperator, .input{
     display: flex;
     align-items: center;
-    font-size: 3em;
+    font-size: 4em;
     font-family: monospace;
 }
 
